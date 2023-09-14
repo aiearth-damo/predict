@@ -1,0 +1,766 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>aiearth.predict.deploy.client.model_version_client &#8212; Predict 0.0.1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=24e20c3b872ad0bc913d" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=24e20c3b872ad0bc913d" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=24e20c3b872ad0bc913d" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=24e20c3b872ad0bc913d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=362ab14a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=24e20c3b872ad0bc913d" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=24e20c3b872ad0bc913d" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=24e20c3b872ad0bc913d"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js?v=40591b51"></script>
+    <script src="../../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../../_static/translations.js?v=beaddf03"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/aiearth/predict/deploy/client/model_version_client';</script>
+    <link rel="icon" href="../../../../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../../../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../../../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/html_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../../../_static/html_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../overview/index.html">
+                        概览
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../getting_started/index.html">
+                        快速开始
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../user_guide/index.html">
+                        用户指南
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../examples/index.html">
+                        场景案例
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../reference/index.html">
+                        API参考
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-header-nav-more-links" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../../../../development/index.html">
+                        开发者贡献
+                      </a>
+                    </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__kbd-shortcut">搜索</span>
+    <span><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__kbd-shortcut">搜索</span>
+    <span><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../overview/index.html">
+                        概览
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../getting_started/index.html">
+                        快速开始
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../user_guide/index.html">
+                        用户指南
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../examples/index.html">
+                        场景案例
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../reference/index.html">
+                        API参考
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-header-nav-more-links" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../../../../development/index.html">
+                        开发者贡献
+                      </a>
+                    </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../../index.html" class="nav-link">模块代码</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">aiearth.predict.deploy.client.model_version_client</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>aiearth.predict.deploy.client.model_version_client 源代码</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">oss2</span>
+<span class="kn">import</span> <span class="nn">tqdm</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">NamedTemporaryFile</span><span class="p">,</span> <span class="n">gettempdir</span>
+
+<span class="kn">from</span> <span class="nn">aiearth.core.auth</span> <span class="kn">import</span> <span class="n">Authenticate</span>
+<span class="kn">from</span> <span class="nn">aiearth.predict.config</span> <span class="kn">import</span> <span class="n">constants</span><span class="p">,</span> <span class="n">LogLevel</span>
+<span class="kn">from</span> <span class="nn">aiearth.predict.utils</span> <span class="kn">import</span> <span class="n">Package</span>
+<span class="kn">from</span> <span class="nn">aiearth.predict.deploy.client.sdk_client</span> <span class="kn">import</span> <span class="n">SdkClient</span>
+<span class="kn">from</span> <span class="nn">aiearth.predict.error</span> <span class="kn">import</span> <span class="n">BizError</span><span class="p">,</span> <span class="n">ErrorCode</span><span class="p">,</span> <span class="n">ErrorMessage</span>
+<span class="kn">from</span> <span class="nn">aiearth.predict.logging</span> <span class="kn">import</span> <span class="n">root_logger</span> <span class="k">as</span> <span class="n">logger</span>
+
+
+<span class="k">class</span> <span class="nc">UriResource</span><span class="p">:</span>
+    <span class="n">create</span> <span class="o">=</span> <span class="s2">&quot;sdk/model_version/create&quot;</span>
+    <span class="n">delete</span> <span class="o">=</span> <span class="s2">&quot;sdk/model_version/delete&quot;</span>
+    <span class="n">upload_package</span> <span class="o">=</span> <span class="s2">&quot;sdk/model_version/upload_package&quot;</span>
+    <span class="n">upload_model</span> <span class="o">=</span> <span class="s2">&quot;sdk/model_version/upload_model&quot;</span>
+    <span class="n">upload_model_finished</span> <span class="o">=</span> <span class="s2">&quot;sdk/model_version/upload_model_finished&quot;</span>
+    <span class="n">list_models</span> <span class="o">=</span> <span class="s2">&quot;sdk/model_version/list_models&quot;</span>
+    <span class="n">get_model</span> <span class="o">=</span> <span class="s2">&quot;sdk/model_version/get_model&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">UploadModelStatus</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">WAITING</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">FINISHED</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">FAILED</span> <span class="o">=</span> <span class="mi">2</span>
+
+
+<div class="viewcode-block" id="ModelVersionClient"><a class="viewcode-back" href="../../../../../reference/apis/deploy.html#aiearth.predict.deploy.client.ModelVersionClient">[文档]</a><span class="k">class</span> <span class="nc">ModelVersionClient</span><span class="p">:</span>
+<div class="viewcode-block" id="ModelVersionClient.create"><a class="viewcode-back" href="../../../../../reference/apis/deploy.html#aiearth.predict.deploy.client.ModelVersionClient.create">[文档]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">model_project_id</span><span class="p">,</span> <span class="n">version_name</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SdkClient</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">UriResource</span><span class="o">.</span><span class="n">create</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">hdrs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
+
+        <span class="n">version</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;modelProjectId&quot;</span><span class="p">:</span> <span class="n">model_project_id</span><span class="p">,</span>
+            <span class="s2">&quot;versionName&quot;</span><span class="p">:</span> <span class="n">version_name</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">reply</span> <span class="o">=</span> <span class="n">SdkClient</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span>
+            <span class="k">raise</span> <span class="n">BizError</span><span class="p">(</span>
+                <span class="n">ErrorCode</span><span class="o">.</span><span class="n">MODEL_VERSION_CREATE_ERROR</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ErrorMessage</span><span class="o">.</span><span class="n">MODEL_VERSION_CREATE_ERROR</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="ModelVersionClient.delete"><a class="viewcode-back" href="../../../../../reference/apis/deploy.html#aiearth.predict.deploy.client.ModelVersionClient.delete">[文档]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="n">model_version_id</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SdkClient</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">UriResource</span><span class="o">.</span><span class="n">create</span><span class="si">}</span><span class="s2">?modelVersionId=</span><span class="si">{</span><span class="n">model_version_id</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">hdrs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
+
+        <span class="n">reply</span> <span class="o">=</span> <span class="n">SdkClient</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span>
+            <span class="k">raise</span> <span class="n">BizError</span><span class="p">(</span>
+                <span class="n">ErrorCode</span><span class="o">.</span><span class="n">MODEL_VERSION_DELETE_ERROR</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ErrorMessage</span><span class="o">.</span><span class="n">MODEL_VERSION_DELETE_ERROR</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="p">)</span></div>
+
+<div class="viewcode-block" id="ModelVersionClient.upload_pacakge"><a class="viewcode-back" href="../../../../../reference/apis/deploy.html#aiearth.predict.deploy.client.ModelVersionClient.upload_pacakge">[文档]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">upload_pacakge</span><span class="p">(</span><span class="n">model_version_id</span><span class="p">,</span> <span class="n">zip_file</span><span class="p">,</span> <span class="n">file_name_without_ext</span><span class="p">,</span> <span class="n">deploy_type</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SdkClient</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">UriResource</span><span class="o">.</span><span class="n">upload_package</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;modelVersionId&quot;</span><span class="p">:</span> <span class="n">model_version_id</span><span class="p">,</span>
+            <span class="s2">&quot;fileNameWithoutExt&quot;</span><span class="p">:</span> <span class="n">file_name_without_ext</span><span class="p">,</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">deploy_type</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">files</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;file&quot;</span><span class="p">:</span> <span class="nb">open</span><span class="p">(</span><span class="n">zip_file</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)}</span>
+        <span class="n">hdrs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x-aie-auth-token&quot;</span><span class="p">:</span> <span class="n">Authenticate</span><span class="o">.</span><span class="n">getCurrentUserToken</span><span class="p">()}</span>
+
+        <span class="k">if</span> <span class="n">constants</span><span class="o">.</span><span class="n">LOG_LEVEL</span> <span class="o">==</span> <span class="n">LogLevel</span><span class="o">.</span><span class="n">debug</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;upload_pacakge request. url: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">, headers: </span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">hdrs</span><span class="p">)</span><span class="si">}</span><span class="s2">, data: </span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="n">hdrs</span><span class="p">,</span>
+            <span class="n">timeout</span><span class="o">=</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">,</span>
+            <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">constants</span><span class="o">.</span><span class="n">LOG_LEVEL</span> <span class="o">==</span> <span class="n">LogLevel</span><span class="o">.</span><span class="n">debug</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;upload_pacakge response. url: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">, response: </span><span class="si">{</span><span class="n">resp</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s2">&quot;401 Authorization Required&quot;</span> <span class="ow">in</span> <span class="n">resp</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">BizError</span><span class="p">(</span>
+                    <span class="n">ErrorCode</span><span class="o">.</span><span class="n">PACKAGE_UPLOAD_ERROR</span><span class="p">,</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ErrorMessage</span><span class="o">.</span><span class="n">PACKAGE_UPLOAD_ERROR</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">ErrorMessage</span><span class="o">.</span><span class="n">UNAUTHORIZED</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">BizError</span><span class="p">(</span>
+                    <span class="n">ErrorCode</span><span class="o">.</span><span class="n">PACKAGE_UPLOAD_ERROR</span><span class="p">,</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ErrorMessage</span><span class="o">.</span><span class="n">PACKAGE_UPLOAD_ERROR</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">resp</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+
+        <span class="n">reply</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span>
+            <span class="k">raise</span> <span class="n">BizError</span><span class="p">(</span>
+                <span class="n">ErrorCode</span><span class="o">.</span><span class="n">PACKAGE_UPLOAD_ERROR</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ErrorMessage</span><span class="o">.</span><span class="n">PACKAGE_UPLOAD_ERROR</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="ModelVersionClient.save_package"><a class="viewcode-back" href="../../../../../reference/apis/deploy.html#aiearth.predict.deploy.client.ModelVersionClient.save_package">[文档]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">save_package</span><span class="p">(</span><span class="n">model_version_id</span><span class="p">,</span> <span class="n">local_working_dir</span><span class="p">,</span> <span class="n">deploy_type</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">local_working_dir</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">BizError</span><span class="p">(</span>
+                <span class="n">ErrorCode</span><span class="o">.</span><span class="n">PATH_EXIST_HINT_ERROR</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ErrorMessage</span><span class="o">.</span><span class="n">PATH_EXIST_HINT_ERROR</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">local_working_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">local_working_dir</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">BizError</span><span class="p">(</span>
+                <span class="n">ErrorCode</span><span class="o">.</span><span class="n">DIRECTORY_HINT_ERROR</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ErrorMessage</span><span class="o">.</span><span class="n">DIRECTORY_HINT_ERROR</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">local_working_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="n">file_name_without_ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">local_working_dir</span><span class="p">)</span>
+        <span class="n">tempdir</span> <span class="o">=</span> <span class="n">gettempdir</span><span class="p">()</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span>
+        <span class="k">with</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="n">tempdir</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.zip&quot;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+            <span class="n">local_package_path</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">name</span>
+            <span class="n">Package</span><span class="o">.</span><span class="n">zip_directory</span><span class="p">(</span><span class="n">local_working_dir</span><span class="p">,</span> <span class="n">local_package_path</span><span class="p">)</span>
+            <span class="n">saved_code_package</span> <span class="o">=</span> <span class="n">ModelVersionClient</span><span class="o">.</span><span class="n">upload_pacakge</span><span class="p">(</span>
+                <span class="n">model_version_id</span><span class="p">,</span>
+                <span class="n">local_package_path</span><span class="p">,</span>
+                <span class="n">file_name_without_ext</span><span class="p">,</span>
+                <span class="n">deploy_type</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">saved_code_package</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="ModelVersionClient.upload"><a class="viewcode-back" href="../../../../../reference/apis/deploy.html#aiearth.predict.deploy.client.ModelVersionClient.upload">[文档]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">upload</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+        <span class="n">auth</span> <span class="o">=</span> <span class="n">oss2</span><span class="o">.</span><span class="n">StsAuth</span><span class="p">(</span>
+            <span class="n">params</span><span class="p">[</span><span class="s2">&quot;accessKeyId&quot;</span><span class="p">],</span>
+            <span class="n">params</span><span class="p">[</span><span class="s2">&quot;accessKeySecret&quot;</span><span class="p">],</span>
+            <span class="n">params</span><span class="p">[</span><span class="s2">&quot;securityToken&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+        <span class="n">bucket</span> <span class="o">=</span> <span class="n">oss2</span><span class="o">.</span><span class="n">Bucket</span><span class="p">(</span>
+            <span class="n">auth</span><span class="p">,</span>
+            <span class="s2">&quot;http://</span><span class="si">{}</span><span class="s2">.aliyuncs.com&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]),</span>
+            <span class="n">params</span><span class="p">[</span><span class="s2">&quot;bucket&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;Content-Disposition&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;attachment;filename=</span><span class="si">{</span><span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">}</span>
+
+        <span class="n">name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">percentage</span><span class="p">(</span><span class="n">consumed_bytes</span><span class="p">,</span> <span class="n">total_bytes</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">total_bytes</span><span class="p">:</span>
+                <span class="n">rate</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">consumed_bytes</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">total_bytes</span><span class="p">)))</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">save </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">rate</span><span class="si">}</span><span class="s2">% &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+                <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+
+        <span class="n">bucket</span><span class="o">.</span><span class="n">put_object_from_file</span><span class="p">(</span>
+            <span class="n">params</span><span class="p">[</span><span class="s2">&quot;fileKey&quot;</span><span class="p">],</span> <span class="n">file</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">progress_callback</span><span class="o">=</span><span class="n">percentage</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="ModelVersionClient.upload_model"><a class="viewcode-back" href="../../../../../reference/apis/deploy.html#aiearth.predict.deploy.client.ModelVersionClient.upload_model">[文档]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">upload_model</span><span class="p">(</span><span class="n">model_version_id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">attached_files</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SdkClient</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">UriResource</span><span class="o">.</span><span class="n">upload_model</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">hdrs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
+        <span class="n">path_file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+            <span class="n">path_file_name</span> <span class="o">=</span> <span class="n">path_file_name</span> <span class="o">+</span> <span class="s2">&quot;.zip&quot;</span>
+        <span class="n">sign</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;modelVersionId&quot;</span><span class="p">:</span> <span class="n">model_version_id</span><span class="p">,</span>
+            <span class="s2">&quot;modelName&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+            <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">path</span><span class="p">,</span>
+            <span class="s2">&quot;fileName&quot;</span><span class="p">:</span> <span class="n">path_file_name</span><span class="p">,</span>
+            <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="n">params</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="n">attached_files</span><span class="p">:</span>
+            <span class="n">sign</span><span class="p">[</span><span class="s2">&quot;attachedFiles&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">attached_files</span>
+
+        <span class="n">reply</span> <span class="o">=</span> <span class="n">SdkClient</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">,</span> <span class="n">sign</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span>
+            <span class="k">raise</span> <span class="n">BizError</span><span class="p">(</span>
+                <span class="n">ErrorCode</span><span class="o">.</span><span class="n">MODEL_UPLOAD_ERROR</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ErrorMessage</span><span class="o">.</span><span class="n">MODEL_UPLOAD_ERROR</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="ModelVersionClient.upload_model_finished"><a class="viewcode-back" href="../../../../../reference/apis/deploy.html#aiearth.predict.deploy.client.ModelVersionClient.upload_model_finished">[文档]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">upload_model_finished</span><span class="p">(</span><span class="n">model_version_id</span><span class="p">,</span> <span class="n">model_storage_id</span><span class="p">,</span> <span class="n">status</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SdkClient</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">UriResource</span><span class="o">.</span><span class="n">upload_model_finished</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">hdrs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
+        <span class="n">fin</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;modelVersionId&quot;</span><span class="p">:</span> <span class="n">model_version_id</span><span class="p">,</span>
+            <span class="s2">&quot;modelStorageId&quot;</span><span class="p">:</span> <span class="n">model_storage_id</span><span class="p">,</span>
+            <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="n">status</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">reply</span> <span class="o">=</span> <span class="n">SdkClient</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">,</span> <span class="n">fin</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span>
+            <span class="k">raise</span> <span class="n">BizError</span><span class="p">(</span>
+                <span class="n">ErrorCode</span><span class="o">.</span><span class="n">MODEL_UPLOAD_ERROR</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ErrorMessage</span><span class="o">.</span><span class="n">MODEL_UPLOAD_ERROR</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="ModelVersionClient.save_model"><a class="viewcode-back" href="../../../../../reference/apis/deploy.html#aiearth.predict.deploy.client.ModelVersionClient.save_model">[文档]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">save_model</span><span class="p">(</span><span class="n">model_version_id</span><span class="p">,</span> <span class="n">model_config</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">model_config</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">model_config</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">model_config</span><span class="o">.</span><span class="n">path</span><span class="p">):</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">name</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">attached_files</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="n">model_config</span><span class="o">.</span><span class="n">attached_files</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">model_config</span><span class="o">.</span><span class="n">attached_files</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">attached_files</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">dict</span><span class="p">()</span>
+        <span class="n">signed</span> <span class="o">=</span> <span class="n">ModelVersionClient</span><span class="o">.</span><span class="n">upload_model</span><span class="p">(</span>
+            <span class="n">model_version_id</span><span class="p">,</span>
+            <span class="n">name</span><span class="p">,</span>
+            <span class="n">model_config</span><span class="o">.</span><span class="n">path</span><span class="p">,</span>
+            <span class="n">attached_files</span><span class="p">,</span>
+            <span class="n">model_config</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span>
+        <span class="p">)</span>
+
+        <span class="n">model_id</span> <span class="o">=</span> <span class="n">signed</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
+        <span class="n">model_tag</span> <span class="o">=</span> <span class="n">signed</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;tag&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;path&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">signed</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">BizError</span><span class="p">(</span>
+                <span class="n">ErrorCode</span><span class="o">.</span><span class="n">MODEL_UPLOAD_ERROR</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ErrorMessage</span><span class="o">.</span><span class="n">MODEL_UPLOAD_ERROR</span><span class="si">}</span><span class="s2">: signed response lack path&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">params</span> <span class="o">=</span> <span class="n">signed</span><span class="p">[</span><span class="s2">&quot;path&quot;</span><span class="p">]</span>
+            <span class="n">raw_path</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;rawPath&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">raw_path</span><span class="p">):</span>
+                <span class="n">tempdir</span> <span class="o">=</span> <span class="n">gettempdir</span><span class="p">()</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span>
+                <span class="k">with</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span>
+                    <span class="n">prefix</span><span class="o">=</span><span class="n">tempdir</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.zip&quot;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">True</span>
+                <span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+                    <span class="n">package_path</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">name</span>
+                    <span class="n">Package</span><span class="o">.</span><span class="n">zip_directory</span><span class="p">(</span><span class="n">raw_path</span><span class="p">,</span> <span class="n">package_path</span><span class="p">)</span>
+                    <span class="n">ModelVersionClient</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="n">package_path</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ModelVersionClient</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="n">raw_path</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="s2">&quot;attachedFiles&quot;</span> <span class="ow">in</span> <span class="n">signed</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">params</span> <span class="ow">in</span> <span class="n">signed</span><span class="p">[</span><span class="s2">&quot;attachedFiles&quot;</span><span class="p">]:</span>
+                    <span class="n">raw_file_path</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;rawPath&quot;</span><span class="p">)</span>
+                    <span class="n">ModelVersionClient</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="n">raw_file_path</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+
+            <span class="n">ModelVersionClient</span><span class="o">.</span><span class="n">upload_model_finished</span><span class="p">(</span>
+                <span class="n">model_version_id</span><span class="p">,</span> <span class="n">model_id</span><span class="p">,</span> <span class="n">UploadModelStatus</span><span class="o">.</span><span class="n">FINISHED</span><span class="o">.</span><span class="n">value</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">traceback</span>
+
+            <span class="n">message</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="n">ModelVersionClient</span><span class="o">.</span><span class="n">upload_model_finished</span><span class="p">(</span>
+                <span class="n">model_version_id</span><span class="p">,</span> <span class="n">model_id</span><span class="p">,</span> <span class="n">UploadModelStatus</span><span class="o">.</span><span class="n">FAILED</span><span class="o">.</span><span class="n">value</span>
+            <span class="p">)</span>
+
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">model_tag</span></div>
+
+<div class="viewcode-block" id="ModelVersionClient.list_models"><a class="viewcode-back" href="../../../../../reference/apis/deploy.html#aiearth.predict.deploy.client.ModelVersionClient.list_models">[文档]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">list_models</span><span class="p">(</span><span class="n">model_version_id</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SdkClient</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">UriResource</span><span class="o">.</span><span class="n">list_models</span><span class="si">}</span><span class="s2">?modelVersionId=</span><span class="si">{</span><span class="n">model_version_id</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">hdrs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
+
+        <span class="n">reply</span> <span class="o">=</span> <span class="n">SdkClient</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span>
+            <span class="k">raise</span> <span class="n">BizError</span><span class="p">(</span>
+                <span class="n">ErrorCode</span><span class="o">.</span><span class="n">LIST_MODELS_ERROR</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ErrorMessage</span><span class="o">.</span><span class="n">LIST_MODELS_ERROR</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="ModelVersionClient.get_model"><a class="viewcode-back" href="../../../../../reference/apis/deploy.html#aiearth.predict.deploy.client.ModelVersionClient.get_model">[文档]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_model</span><span class="p">(</span><span class="n">model_tag</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">SdkClient</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">UriResource</span><span class="o">.</span><span class="n">get_model</span><span class="si">}</span><span class="s2">?modelTag=</span><span class="si">{</span><span class="n">model_tag</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">hdrs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
+
+        <span class="n">reply</span> <span class="o">=</span> <span class="n">SdkClient</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span>
+            <span class="k">raise</span> <span class="n">BizError</span><span class="p">(</span>
+                <span class="n">ErrorCode</span><span class="o">.</span><span class="n">GET_MODEL_ERROR</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ErrorMessage</span><span class="o">.</span><span class="n">GET_MODEL_ERROR</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span></div></div>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=24e20c3b872ad0bc913d"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=24e20c3b872ad0bc913d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, aiearth-damo.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    由 <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2创建。
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.4dev0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

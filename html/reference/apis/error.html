@@ -1,0 +1,867 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>error &#8212; Predict 0.0.1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=24e20c3b872ad0bc913d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=24e20c3b872ad0bc913d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=24e20c3b872ad0bc913d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=24e20c3b872ad0bc913d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=362ab14a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=24e20c3b872ad0bc913d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=24e20c3b872ad0bc913d" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=24e20c3b872ad0bc913d"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=40591b51"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/translations.js?v=beaddf03"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/apis/error';</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="logging" href="logging.html" />
+    <link rel="prev" title="deploy" href="deploy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/html_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/html_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../overview/index.html">
+                        概览
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../getting_started/index.html">
+                        快速开始
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        用户指南
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../examples/index.html">
+                        场景案例
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        API参考
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-header-nav-more-links" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../development/index.html">
+                        开发者贡献
+                      </a>
+                    </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__kbd-shortcut">搜索</span>
+    <span><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__kbd-shortcut">搜索</span>
+    <span><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../overview/index.html">
+                        概览
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../getting_started/index.html">
+                        快速开始
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        用户指南
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../examples/index.html">
+                        场景案例
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        API参考
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-header-nav-more-links" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../development/index.html">
+                        开发者贡献
+                      </a>
+                    </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="adapter.html">adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checkpoint.html">checkpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset.html">dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">deploy</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">error</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipelines.html">pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="predictors.html">predictors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="processors.html">processors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schedule.html">schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API参考</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">error</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-aiearth_predict_error">
+<span id="error"></span><span id="reference-apis-error-index"></span><h1>error<a class="headerlink" href="#module-aiearth_predict_error" title="此标题的永久链接">#</a></h1>
+<dl class="py exception">
+<dt class="sig sig-object py" id="aiearth_predict_error_BizError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiearth.predict.error.</span></span><span class="sig-name descname"><span class="pre">BizError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/error/biz_error.html#BizError"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_error_BizError" title="永久链接至目标">#</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiearth.predict.error.</span></span><span class="sig-name descname"><span class="pre">ErrorCode</span></span><a class="reference internal" href="../../_modules/aiearth/predict/error/error_code.html#ErrorCode"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_error_ErrorCode" title="永久链接至目标">#</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_ARGS_FORMAT_ERROR">
+<span class="sig-name descname"><span class="pre">ARGS_FORMAT_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001023</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_ARGS_FORMAT_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_ATTRIBUTES_NOT_SET">
+<span class="sig-name descname"><span class="pre">ATTRIBUTES_NOT_SET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001001</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_ATTRIBUTES_NOT_SET" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_DEFAULT_INTERNAL_ERROR">
+<span class="sig-name descname"><span class="pre">DEFAULT_INTERNAL_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">13000000</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_DEFAULT_INTERNAL_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_DIRECTORY_HINT_ERROR">
+<span class="sig-name descname"><span class="pre">DIRECTORY_HINT_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001017</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_DIRECTORY_HINT_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_FILE_HINT_ERROR">
+<span class="sig-name descname"><span class="pre">FILE_HINT_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001018</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_FILE_HINT_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_GET_ENV_ERROR">
+<span class="sig-name descname"><span class="pre">GET_ENV_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001024</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_GET_ENV_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_GET_MODEL_ERROR">
+<span class="sig-name descname"><span class="pre">GET_MODEL_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001022</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_GET_MODEL_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_HTTP_REQUEST_ERROR">
+<span class="sig-name descname"><span class="pre">HTTP_REQUEST_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001025</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_HTTP_REQUEST_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_JOB_CREATE_ERROR">
+<span class="sig-name descname"><span class="pre">JOB_CREATE_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001008</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_JOB_CREATE_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_JOB_GET_STATUS_ERROR">
+<span class="sig-name descname"><span class="pre">JOB_GET_STATUS_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001009</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_JOB_GET_STATUS_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_JOB_STOP_ERROR">
+<span class="sig-name descname"><span class="pre">JOB_STOP_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001010</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_JOB_STOP_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_LIST_MODELS_ERROR">
+<span class="sig-name descname"><span class="pre">LIST_MODELS_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001021</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_LIST_MODELS_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_MODEL_PROJECT_CREATE_ERROR">
+<span class="sig-name descname"><span class="pre">MODEL_PROJECT_CREATE_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001002</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_MODEL_PROJECT_CREATE_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_MODEL_PROJECT_DELETE_ERROR">
+<span class="sig-name descname"><span class="pre">MODEL_PROJECT_DELETE_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001003</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_MODEL_PROJECT_DELETE_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_MODEL_UPLOAD_ERROR">
+<span class="sig-name descname"><span class="pre">MODEL_UPLOAD_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001007</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_MODEL_UPLOAD_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_MODEL_VERSION_CREATE_ERROR">
+<span class="sig-name descname"><span class="pre">MODEL_VERSION_CREATE_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001004</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_MODEL_VERSION_CREATE_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_MODEL_VERSION_DELETE_ERROR">
+<span class="sig-name descname"><span class="pre">MODEL_VERSION_DELETE_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001005</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_MODEL_VERSION_DELETE_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_PACKAGE_UPLOAD_ERROR">
+<span class="sig-name descname"><span class="pre">PACKAGE_UPLOAD_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001006</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_PACKAGE_UPLOAD_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_PATH_EXIST_HINT_ERROR">
+<span class="sig-name descname"><span class="pre">PATH_EXIST_HINT_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001019</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_PATH_EXIST_HINT_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_RELATIVE_PATH_HINT_ERROR">
+<span class="sig-name descname"><span class="pre">RELATIVE_PATH_HINT_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001020</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_RELATIVE_PATH_HINT_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_SERVE_DEPLOY_ERROR">
+<span class="sig-name descname"><span class="pre">SERVE_DEPLOY_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001014</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_SERVE_DEPLOY_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_SERVE_GET_DEPLOY_STATUS_ERROR">
+<span class="sig-name descname"><span class="pre">SERVE_GET_DEPLOY_STATUS_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001015</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_SERVE_GET_DEPLOY_STATUS_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_SERVE_UNDEPLOY_ERROR">
+<span class="sig-name descname"><span class="pre">SERVE_UNDEPLOY_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001016</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_SERVE_UNDEPLOY_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_TOOLBOX_DEPLOY_ERROR">
+<span class="sig-name descname"><span class="pre">TOOLBOX_DEPLOY_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001011</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_TOOLBOX_DEPLOY_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_TOOLBOX_GET_DEPLOY_STATUS_ERROR">
+<span class="sig-name descname"><span class="pre">TOOLBOX_GET_DEPLOY_STATUS_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001012</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_TOOLBOX_GET_DEPLOY_STATUS_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorCode_TOOLBOX_UNDEPLOY_ERROR">
+<span class="sig-name descname"><span class="pre">TOOLBOX_UNDEPLOY_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23001013</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorCode_TOOLBOX_UNDEPLOY_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiearth.predict.error.</span></span><span class="sig-name descname"><span class="pre">ErrorMessage</span></span><a class="reference internal" href="../../_modules/aiearth/predict/error/error_code.html#ErrorMessage"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_error_ErrorMessage" title="永久链接至目标">#</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_ARGS_FORMAT_ERROR">
+<span class="sig-name descname"><span class="pre">ARGS_FORMAT_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'参数格式错误'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_ARGS_FORMAT_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_ATTRIBUTES_NOT_SET">
+<span class="sig-name descname"><span class="pre">ATTRIBUTES_NOT_SET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'属性未设置'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_ATTRIBUTES_NOT_SET" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_DIRECTORY_HINT_ERROR">
+<span class="sig-name descname"><span class="pre">DIRECTORY_HINT_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'参数应为目录'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_DIRECTORY_HINT_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_FILE_HINT_ERROR">
+<span class="sig-name descname"><span class="pre">FILE_HINT_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'参数应为文件'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_FILE_HINT_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_GET_ENV_ERROR">
+<span class="sig-name descname"><span class="pre">GET_ENV_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'获取环境变量失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_GET_ENV_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_GET_MODEL_ERROR">
+<span class="sig-name descname"><span class="pre">GET_MODEL_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'获取模型失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_GET_MODEL_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_HTTP_REQUEST_ERROR">
+<span class="sig-name descname"><span class="pre">HTTP_REQUEST_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'HTTP请求失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_HTTP_REQUEST_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_JOB_CREATE_ERROR">
+<span class="sig-name descname"><span class="pre">JOB_CREATE_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[任务]创建失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_JOB_CREATE_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_JOB_GET_STATUS_ERROR">
+<span class="sig-name descname"><span class="pre">JOB_GET_STATUS_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[任务]状态获取失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_JOB_GET_STATUS_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_JOB_STOP_ERROR">
+<span class="sig-name descname"><span class="pre">JOB_STOP_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[任务]停止失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_JOB_STOP_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_LIST_MODELS_ERROR">
+<span class="sig-name descname"><span class="pre">LIST_MODELS_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'获取模型列表失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_LIST_MODELS_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_MODEL_PROJECT_CREATE_ERROR">
+<span class="sig-name descname"><span class="pre">MODEL_PROJECT_CREATE_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'模型项目创建失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_MODEL_PROJECT_CREATE_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_MODEL_PROJECT_DELETE_ERROR">
+<span class="sig-name descname"><span class="pre">MODEL_PROJECT_DELETE_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'模型项目删除失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_MODEL_PROJECT_DELETE_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_MODEL_UPLOAD_ERROR">
+<span class="sig-name descname"><span class="pre">MODEL_UPLOAD_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'模型上传失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_MODEL_UPLOAD_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_MODEL_VERSION_CREATE_ERROR">
+<span class="sig-name descname"><span class="pre">MODEL_VERSION_CREATE_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'模型版本创建失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_MODEL_VERSION_CREATE_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_MODEL_VERSION_DELETE_ERROR">
+<span class="sig-name descname"><span class="pre">MODEL_VERSION_DELETE_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'模型版本删除失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_MODEL_VERSION_DELETE_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_PACKAGE_UPLOAD_ERROR">
+<span class="sig-name descname"><span class="pre">PACKAGE_UPLOAD_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'代码上传失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_PACKAGE_UPLOAD_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_PATH_EXIST_HINT_ERROR">
+<span class="sig-name descname"><span class="pre">PATH_EXIST_HINT_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'路径不存在'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_PATH_EXIST_HINT_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_RELATIVE_PATH_HINT_ERROR">
+<span class="sig-name descname"><span class="pre">RELATIVE_PATH_HINT_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'参数应为相对路径'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_RELATIVE_PATH_HINT_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_SERVE_DEPLOY_ERROR">
+<span class="sig-name descname"><span class="pre">SERVE_DEPLOY_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[在线服务]模型部署失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_SERVE_DEPLOY_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_SERVE_GET_DEPLOY_STATUS_ERROR">
+<span class="sig-name descname"><span class="pre">SERVE_GET_DEPLOY_STATUS_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[在线服务]模型部署状态获取失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_SERVE_GET_DEPLOY_STATUS_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_SERVE_UNDEPLOY_ERROR">
+<span class="sig-name descname"><span class="pre">SERVE_UNDEPLOY_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[在线服务]模型取消部署失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_SERVE_UNDEPLOY_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_TOOLBOX_DEPLOY_ERROR">
+<span class="sig-name descname"><span class="pre">TOOLBOX_DEPLOY_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[工具箱]模型部署失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_TOOLBOX_DEPLOY_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_TOOLBOX_GET_DEPLOY_STATUS_ERROR">
+<span class="sig-name descname"><span class="pre">TOOLBOX_GET_DEPLOY_STATUS_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[工具箱]模型部署状态获取失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_TOOLBOX_GET_DEPLOY_STATUS_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_TOOLBOX_UNDEPLOY_ERROR">
+<span class="sig-name descname"><span class="pre">TOOLBOX_UNDEPLOY_ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'[工具箱]模型取消部署失败'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_TOOLBOX_UNDEPLOY_ERROR" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aiearth_predict_error_ErrorMessage_UNAUTHORIZED">
+<span class="sig-name descname"><span class="pre">UNAUTHORIZED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'未授权或者个人token失效，请先调用</span> <span class="pre">aie.Authenticate()</span> <span class="pre">进行授权'</span></em><a class="headerlink" href="#aiearth_predict_error_ErrorMessage_UNAUTHORIZED" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aiearth_predict_error_beautify_ex_message">
+<span class="sig-prename descclassname"><span class="pre">aiearth.predict.error.</span></span><span class="sig-name descname"><span class="pre">beautify_ex_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Exception</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/error/utils.html#beautify_ex_message"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_error_beautify_ex_message" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="deploy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">deploy</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="logging.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">logging</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_BizError"><code class="docutils literal notranslate"><span class="pre">BizError</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode"><code class="docutils literal notranslate"><span class="pre">ErrorCode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_ARGS_FORMAT_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.ARGS_FORMAT_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_ATTRIBUTES_NOT_SET"><code class="docutils literal notranslate"><span class="pre">ErrorCode.ATTRIBUTES_NOT_SET</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_DEFAULT_INTERNAL_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.DEFAULT_INTERNAL_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_DIRECTORY_HINT_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.DIRECTORY_HINT_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_FILE_HINT_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.FILE_HINT_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_GET_ENV_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.GET_ENV_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_GET_MODEL_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.GET_MODEL_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_HTTP_REQUEST_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.HTTP_REQUEST_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_JOB_CREATE_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.JOB_CREATE_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_JOB_GET_STATUS_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.JOB_GET_STATUS_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_JOB_STOP_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.JOB_STOP_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_LIST_MODELS_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.LIST_MODELS_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_MODEL_PROJECT_CREATE_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.MODEL_PROJECT_CREATE_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_MODEL_PROJECT_DELETE_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.MODEL_PROJECT_DELETE_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_MODEL_UPLOAD_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.MODEL_UPLOAD_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_MODEL_VERSION_CREATE_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.MODEL_VERSION_CREATE_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_MODEL_VERSION_DELETE_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.MODEL_VERSION_DELETE_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_PACKAGE_UPLOAD_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.PACKAGE_UPLOAD_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_PATH_EXIST_HINT_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.PATH_EXIST_HINT_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_RELATIVE_PATH_HINT_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.RELATIVE_PATH_HINT_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_SERVE_DEPLOY_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.SERVE_DEPLOY_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_SERVE_GET_DEPLOY_STATUS_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.SERVE_GET_DEPLOY_STATUS_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_SERVE_UNDEPLOY_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.SERVE_UNDEPLOY_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_TOOLBOX_DEPLOY_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.TOOLBOX_DEPLOY_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_TOOLBOX_GET_DEPLOY_STATUS_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.TOOLBOX_GET_DEPLOY_STATUS_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorCode_TOOLBOX_UNDEPLOY_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorCode.TOOLBOX_UNDEPLOY_ERROR</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage"><code class="docutils literal notranslate"><span class="pre">ErrorMessage</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_ARGS_FORMAT_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.ARGS_FORMAT_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_ATTRIBUTES_NOT_SET"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.ATTRIBUTES_NOT_SET</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_DIRECTORY_HINT_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.DIRECTORY_HINT_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_FILE_HINT_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.FILE_HINT_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_GET_ENV_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.GET_ENV_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_GET_MODEL_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.GET_MODEL_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_HTTP_REQUEST_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.HTTP_REQUEST_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_JOB_CREATE_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.JOB_CREATE_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_JOB_GET_STATUS_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.JOB_GET_STATUS_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_JOB_STOP_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.JOB_STOP_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_LIST_MODELS_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.LIST_MODELS_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_MODEL_PROJECT_CREATE_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.MODEL_PROJECT_CREATE_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_MODEL_PROJECT_DELETE_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.MODEL_PROJECT_DELETE_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_MODEL_UPLOAD_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.MODEL_UPLOAD_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_MODEL_VERSION_CREATE_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.MODEL_VERSION_CREATE_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_MODEL_VERSION_DELETE_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.MODEL_VERSION_DELETE_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_PACKAGE_UPLOAD_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.PACKAGE_UPLOAD_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_PATH_EXIST_HINT_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.PATH_EXIST_HINT_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_RELATIVE_PATH_HINT_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.RELATIVE_PATH_HINT_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_SERVE_DEPLOY_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.SERVE_DEPLOY_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_SERVE_GET_DEPLOY_STATUS_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.SERVE_GET_DEPLOY_STATUS_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_SERVE_UNDEPLOY_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.SERVE_UNDEPLOY_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_TOOLBOX_DEPLOY_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.TOOLBOX_DEPLOY_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_TOOLBOX_GET_DEPLOY_STATUS_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.TOOLBOX_GET_DEPLOY_STATUS_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_TOOLBOX_UNDEPLOY_ERROR"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.TOOLBOX_UNDEPLOY_ERROR</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_ErrorMessage_UNAUTHORIZED"><code class="docutils literal notranslate"><span class="pre">ErrorMessage.UNAUTHORIZED</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_error_beautify_ex_message"><code class="docutils literal notranslate"><span class="pre">beautify_ex_message()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=24e20c3b872ad0bc913d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=24e20c3b872ad0bc913d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, aiearth-damo.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    由 <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2创建。
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.4dev0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

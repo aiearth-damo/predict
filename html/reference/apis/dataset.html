@@ -1,0 +1,850 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dataset &#8212; Predict 0.0.1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=24e20c3b872ad0bc913d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=24e20c3b872ad0bc913d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=24e20c3b872ad0bc913d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=24e20c3b872ad0bc913d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=362ab14a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=24e20c3b872ad0bc913d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=24e20c3b872ad0bc913d" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=24e20c3b872ad0bc913d"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=40591b51"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/translations.js?v=beaddf03"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/apis/dataset';</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="deploy" href="deploy.html" />
+    <link rel="prev" title="config" href="config.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/html_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/html_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../overview/index.html">
+                        概览
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../getting_started/index.html">
+                        快速开始
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        用户指南
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../examples/index.html">
+                        场景案例
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        API参考
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-header-nav-more-links" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../development/index.html">
+                        开发者贡献
+                      </a>
+                    </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__kbd-shortcut">搜索</span>
+    <span><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__kbd-shortcut">搜索</span>
+    <span><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../overview/index.html">
+                        概览
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../getting_started/index.html">
+                        快速开始
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        用户指南
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../examples/index.html">
+                        场景案例
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        API参考
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-header-nav-more-links" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../development/index.html">
+                        开发者贡献
+                      </a>
+                    </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="adapter.html">adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checkpoint.html">checkpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">config</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">deploy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="error.html">error</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipelines.html">pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="predictors.html">predictors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="processors.html">processors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schedule.html">schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API参考</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dataset</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-aiearth_predict_dataset">
+<span id="dataset"></span><span id="reference-apis-dataset-index"></span><h1>dataset<a class="headerlink" href="#module-aiearth_predict_dataset" title="此标题的永久链接">#</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_read_raster_dataset">
+<span class="sig-prename descclassname"><span class="pre">aiearth.predict.dataset.</span></span><span class="sig-name descname"><span class="pre">read_raster_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raster_dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#aiearth.predict.dataset.raster.RasterDataset" title="aiearth.predict.dataset.raster.raster_dataset.RasterDataset"><span class="pre">RasterDataset</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bound</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_memory_buffer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aoi_vector_dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#aiearth.predict.dataset.vector.VectorDataset" title="aiearth.predict.dataset.vector.vector_dataset.VectorDataset"><span class="pre">VectorDataset</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_block_image_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'image'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_block_box_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'box'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_block_pad_bounds_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pad_bounds'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_bytes_growth_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ray_remote_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">read_args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/read_api.html#read_raster_dataset"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_read_raster_dataset" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<section id="module-aiearth_predict_dataset_datasource">
+<span id="datasource"></span><h2>datasource<a class="headerlink" href="#module-aiearth_predict_dataset_datasource" title="此标题的永久链接">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_datasource_RasterDatasetReader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiearth.predict.dataset.datasource.</span></span><span class="sig-name descname"><span class="pre">RasterDatasetReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raster_dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#aiearth.predict.dataset.raster.RasterDataset" title="aiearth.predict.dataset.raster.raster_dataset.RasterDataset"><span class="pre">RasterDataset</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bound</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_memory_buffer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aoi_vector_dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#aiearth.predict.dataset.vector.VectorDataset" title="aiearth.predict.dataset.vector.vector_dataset.VectorDataset"><span class="pre">VectorDataset</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_block_image_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_block_box_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_block_pad_bounds_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_bytes_growth_factor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/datasource/raster_dataset_reader.html#RasterDatasetReader"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_datasource_RasterDatasetReader" title="永久链接至目标">#</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">Reader</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_datasource_RasterDatasetReader_estimate_inmemory_data_size">
+<span class="sig-name descname"><span class="pre">estimate_inmemory_data_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/datasource/raster_dataset_reader.html#RasterDatasetReader.estimate_inmemory_data_size"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_datasource_RasterDatasetReader_estimate_inmemory_data_size" title="永久链接至目标">#</a></dt>
+<dd><p>Return an estimate of the in-memory data size, or None if unknown.</p>
+<p>Note that the in-memory data size may be larger than the on-disk data size.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_datasource_RasterDatasetReader_get_read_tasks">
+<span class="sig-name descname"><span class="pre">get_read_tasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parallelism</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">ReadTask</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/datasource/raster_dataset_reader.html#RasterDatasetReader.get_read_tasks"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_datasource_RasterDatasetReader_get_read_tasks" title="永久链接至目标">#</a></dt>
+<dd><p>Execute the read and return read tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parallelism</strong> – The requested read parallelism. The number of read
+tasks should equal to this value if possible.</p></li>
+<li><p><strong>read_args</strong> – Additional kwargs to pass to the datasource impl.</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of read tasks that can be executed to read blocks from the
+datasource in parallel.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_datasource_RasterDatasource">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiearth.predict.dataset.datasource.</span></span><span class="sig-name descname"><span class="pre">RasterDatasource</span></span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/datasource/raster_datasource.html#RasterDatasource"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_datasource_RasterDatasource" title="永久链接至目标">#</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">Datasource</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_datasource_RasterDatasource_create_reader">
+<span class="sig-name descname"><span class="pre">create_reader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raster_dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bound</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_memory_buffer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aoi_vector_dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_block_image_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_block_box_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_block_pad_bounds_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_bytes_growth_factor</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">read_args</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Reader</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/datasource/raster_datasource.html#RasterDatasource.create_reader"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_datasource_RasterDatasource_create_reader" title="永久链接至目标">#</a></dt>
+<dd><p>Return a Reader for the given read arguments.</p>
+<p>The reader object will be responsible for querying the read metadata, and
+generating the actual read tasks to retrieve the data blocks upon request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>read_args</strong> – Additional kwargs to pass to the datasource impl.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-aiearth_predict_dataset_raster">
+<span id="raster"></span><h2>raster<a class="headerlink" href="#module-aiearth_predict_dataset_raster" title="此标题的永久链接">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_AIEGeoserverRasterDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiearth.predict.dataset.raster.</span></span><span class="sig-name descname"><span class="pre">AIEGeoserverRasterDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="utils.html#aiearth.predict.utils.box.Box" title="aiearth.predict.utils.box.Box"><span class="pre">Box</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/aie_geoserver_raster_dataset.html#AIEGeoserverRasterDataset"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_AIEGeoserverRasterDataset" title="永久链接至目标">#</a></dt>
+<dd><p>基类：<a class="reference internal" href="#aiearth.predict.dataset.raster.RasterioDataset" title="aiearth.predict.dataset.raster.rasterio_dataset.RasterioDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">RasterioDataset</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_AIEGeoserverRasterDataset_open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'image/jpeg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">18</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">up_sample_level_limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">16</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/aie_geoserver_raster_dataset.html#AIEGeoserverRasterDataset.open"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_AIEGeoserverRasterDataset_open" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_AIEGeoserverRasterDataset_read_chip_data">
+<span class="sig-name descname"><span class="pre">read_chip_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">read_args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/aie_geoserver_raster_dataset.html#AIEGeoserverRasterDataset.read_chip_data"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_AIEGeoserverRasterDataset_read_chip_data" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_AIEGeoserverRasterDataset_set_chip_data_info">
+<span class="sig-name descname"><span class="pre">set_chip_data_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/aie_geoserver_raster_dataset.html#AIEGeoserverRasterDataset.set_chip_data_info"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_AIEGeoserverRasterDataset_set_chip_data_info" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiearth.predict.dataset.raster.</span></span><span class="sig-name descname"><span class="pre">RasterDataset</span></span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/raster_dataset.html#RasterDataset"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterDataset" title="永久链接至目标">#</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiearth.predict.dataset.raster.</span></span><span class="sig-name descname"><span class="pre">RasterioDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="utils.html#aiearth.predict.utils.box.Box" title="aiearth.predict.utils.box.Box"><span class="pre">Box</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset" title="永久链接至目标">#</a></dt>
+<dd><p>基类：<a class="reference internal" href="#aiearth.predict.dataset.raster.RasterDataset" title="aiearth.predict.dataset.raster.raster_dataset.RasterDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">RasterDataset</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_calc_window_bounds">
+<span class="sig-name descname"><span class="pre">calc_window_bounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Window</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.calc_window_bounds"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_calc_window_bounds" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_calc_window_box_bounds">
+<span class="sig-name descname"><span class="pre">calc_window_box_bounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">box</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="utils.html#aiearth.predict.utils.box.Box" title="aiearth.predict.utils.box.Box"><span class="pre">Box</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.calc_window_box_bounds"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_calc_window_box_bounds" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_get_chip_dtype">
+<span class="sig-name descname"><span class="pre">get_chip_dtype</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.get_chip_dtype"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_get_chip_dtype" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_get_chip_item_byte_size">
+<span class="sig-name descname"><span class="pre">get_chip_item_byte_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.get_chip_item_byte_size"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_get_chip_item_byte_size" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_get_chip_num_channels">
+<span class="sig-name descname"><span class="pre">get_chip_num_channels</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.get_chip_num_channels"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_get_chip_num_channels" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_get_crs">
+<span class="sig-name descname"><span class="pre">get_crs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.get_crs"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_get_crs" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_get_data_by_bounding_box">
+<span class="sig-name descname"><span class="pre">get_data_by_bounding_box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">boxes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="utils.html#aiearth.predict.utils.box.Box" title="aiearth.predict.utils.box.Box"><span class="pre">Box</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="utils.html#aiearth.predict.utils.box.Box" title="aiearth.predict.utils.box.Box"><span class="pre">Box</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.get_data_by_bounding_box"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_get_data_by_bounding_box" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_get_data_by_window_box">
+<span class="sig-name descname"><span class="pre">get_data_by_window_box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">boxes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="utils.html#aiearth.predict.utils.box.Box" title="aiearth.predict.utils.box.Box"><span class="pre">Box</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="utils.html#aiearth.predict.utils.box.Box" title="aiearth.predict.utils.box.Box"><span class="pre">Box</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.get_data_by_window_box"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_get_data_by_window_box" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_get_extent">
+<span class="sig-name descname"><span class="pre">get_extent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.get_extent"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_get_extent" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_get_extent_height">
+<span class="sig-name descname"><span class="pre">get_extent_height</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.get_extent_height"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_get_extent_height" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_get_extent_transform">
+<span class="sig-name descname"><span class="pre">get_extent_transform</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.get_extent_transform"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_get_extent_transform" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_get_extent_width">
+<span class="sig-name descname"><span class="pre">get_extent_width</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.get_extent_width"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_get_extent_width" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.open"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_open" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_read_chip_data">
+<span class="sig-name descname"><span class="pre">read_chip_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DatasetReader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Window</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">read_args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.read_chip_data"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_read_chip_data" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_round_extent">
+<span class="sig-name descname"><span class="pre">round_extent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="utils.html#aiearth.predict.utils.box.Box" title="aiearth.predict.utils.box.Box"><span class="pre">Box</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.round_extent"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_round_extent" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_set_chip_data_info">
+<span class="sig-name descname"><span class="pre">set_chip_data_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.set_chip_data_info"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_set_chip_data_info" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_set_extent">
+<span class="sig-name descname"><span class="pre">set_extent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="utils.html#aiearth.predict.utils.box.Box" title="aiearth.predict.utils.box.Box"><span class="pre">Box</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">shapely.geometry.polygon.Polygon</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.set_extent"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_set_extent" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_set_extent_from_box">
+<span class="sig-name descname"><span class="pre">set_extent_from_box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">box</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="utils.html#aiearth.predict.utils.box.Box" title="aiearth.predict.utils.box.Box"><span class="pre">Box</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.set_extent_from_box"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_set_extent_from_box" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_set_extent_from_polygon">
+<span class="sig-name descname"><span class="pre">set_extent_from_polygon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">polygon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">shapely.geometry.polygon.Polygon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.set_extent_from_polygon"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_set_extent_from_polygon" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_set_extent_height">
+<span class="sig-name descname"><span class="pre">set_extent_height</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">height</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.set_extent_height"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_set_extent_height" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_set_extent_width">
+<span class="sig-name descname"><span class="pre">set_extent_width</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.set_extent_width"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_set_extent_width" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_RasterioDataset_set_read_band_order">
+<span class="sig-name descname"><span class="pre">set_read_band_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/rasterio_dataset.html#RasterioDataset.set_read_band_order"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_RasterioDataset_set_read_band_order" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_TiffFileRasterDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiearth.predict.dataset.raster.</span></span><span class="sig-name descname"><span class="pre">TiffFileRasterDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="utils.html#aiearth.predict.utils.box.Box" title="aiearth.predict.utils.box.Box"><span class="pre">Box</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'boundless':</span> <span class="pre">True,</span> <span class="pre">'fill_value':</span> <span class="pre">0}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/tiff_file_raster_dataset.html#TiffFileRasterDataset"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_TiffFileRasterDataset" title="永久链接至目标">#</a></dt>
+<dd><p>基类：<a class="reference internal" href="#aiearth.predict.dataset.raster.RasterioDataset" title="aiearth.predict.dataset.raster.rasterio_dataset.RasterioDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">RasterioDataset</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_TiffFileRasterDataset_open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/tiff_file_raster_dataset.html#TiffFileRasterDataset.open"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_TiffFileRasterDataset_open" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_TiffFileRasterDataset_read_chip_data">
+<span class="sig-name descname"><span class="pre">read_chip_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DatasetReader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Window</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">read_args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/tiff_file_raster_dataset.html#TiffFileRasterDataset.read_chip_data"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_TiffFileRasterDataset_read_chip_data" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_raster_TiffFileRasterDataset_set_chip_data_info">
+<span class="sig-name descname"><span class="pre">set_chip_data_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/raster/tiff_file_raster_dataset.html#TiffFileRasterDataset.set_chip_data_info"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_raster_TiffFileRasterDataset_set_chip_data_info" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-aiearth_predict_dataset_vector">
+<span id="vector"></span><h2>vector<a class="headerlink" href="#module-aiearth_predict_dataset_vector" title="此标题的永久链接">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_vector_ShapeFileVectorDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiearth.predict.dataset.vector.</span></span><span class="sig-name descname"><span class="pre">ShapeFileVectorDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/vector/shape_file_vector_dataset.html#ShapeFileVectorDataset"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_vector_ShapeFileVectorDataset" title="永久链接至目标">#</a></dt>
+<dd><p>基类：<a class="reference internal" href="#aiearth.predict.dataset.vector.VectorDataset" title="aiearth.predict.dataset.vector.vector_dataset.VectorDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">VectorDataset</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_vector_ShapeFileVectorDataset_get_features">
+<span class="sig-name descname"><span class="pre">get_features</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/vector/shape_file_vector_dataset.html#ShapeFileVectorDataset.get_features"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_vector_ShapeFileVectorDataset_get_features" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_vector_ShapeFileVectorDataset_get_geoms">
+<span class="sig-name descname"><span class="pre">get_geoms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/vector/shape_file_vector_dataset.html#ShapeFileVectorDataset.get_geoms"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_vector_ShapeFileVectorDataset_get_geoms" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_vector_ShapeFileVectorDataset_is_intersects_with_box">
+<span class="sig-name descname"><span class="pre">is_intersects_with_box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">box</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="utils.html#aiearth.predict.utils.box.Box" title="aiearth.predict.utils.box.Box"><span class="pre">Box</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">need_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/vector/shape_file_vector_dataset.html#ShapeFileVectorDataset.is_intersects_with_box"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_vector_ShapeFileVectorDataset_is_intersects_with_box" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_vector_ShapeFileVectorDataset_load_features">
+<span class="sig-name descname"><span class="pre">load_features</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/vector/shape_file_vector_dataset.html#ShapeFileVectorDataset.load_features"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_vector_ShapeFileVectorDataset_load_features" title="永久链接至目标">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="aiearth_predict_dataset_vector_VectorDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiearth.predict.dataset.vector.</span></span><span class="sig-name descname"><span class="pre">VectorDataset</span></span><a class="reference internal" href="../../_modules/aiearth/predict/dataset/vector/vector_dataset.html#VectorDataset"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#aiearth_predict_dataset_vector_VectorDataset" title="永久链接至目标">#</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="config.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">config</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="deploy.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">deploy</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_read_raster_dataset"><code class="docutils literal notranslate"><span class="pre">read_raster_dataset()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aiearth_predict_dataset_datasource">datasource</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_datasource_RasterDatasetReader"><code class="docutils literal notranslate"><span class="pre">RasterDatasetReader</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_datasource_RasterDatasetReader_estimate_inmemory_data_size"><code class="docutils literal notranslate"><span class="pre">RasterDatasetReader.estimate_inmemory_data_size()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_datasource_RasterDatasetReader_get_read_tasks"><code class="docutils literal notranslate"><span class="pre">RasterDatasetReader.get_read_tasks()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_datasource_RasterDatasource"><code class="docutils literal notranslate"><span class="pre">RasterDatasource</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_datasource_RasterDatasource_create_reader"><code class="docutils literal notranslate"><span class="pre">RasterDatasource.create_reader()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aiearth_predict_dataset_raster">raster</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_AIEGeoserverRasterDataset"><code class="docutils literal notranslate"><span class="pre">AIEGeoserverRasterDataset</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_AIEGeoserverRasterDataset_open"><code class="docutils literal notranslate"><span class="pre">AIEGeoserverRasterDataset.open()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_AIEGeoserverRasterDataset_read_chip_data"><code class="docutils literal notranslate"><span class="pre">AIEGeoserverRasterDataset.read_chip_data()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_AIEGeoserverRasterDataset_set_chip_data_info"><code class="docutils literal notranslate"><span class="pre">AIEGeoserverRasterDataset.set_chip_data_info()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterDataset"><code class="docutils literal notranslate"><span class="pre">RasterDataset</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset"><code class="docutils literal notranslate"><span class="pre">RasterioDataset</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_calc_window_bounds"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.calc_window_bounds()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_calc_window_box_bounds"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.calc_window_box_bounds()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_get_chip_dtype"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.get_chip_dtype()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_get_chip_item_byte_size"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.get_chip_item_byte_size()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_get_chip_num_channels"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.get_chip_num_channels()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_get_crs"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.get_crs()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_get_data_by_bounding_box"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.get_data_by_bounding_box()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_get_data_by_window_box"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.get_data_by_window_box()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_get_extent"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.get_extent()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_get_extent_height"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.get_extent_height()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_get_extent_transform"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.get_extent_transform()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_get_extent_width"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.get_extent_width()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_open"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.open()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_read_chip_data"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.read_chip_data()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_round_extent"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.round_extent()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_set_chip_data_info"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.set_chip_data_info()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_set_extent"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.set_extent()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_set_extent_from_box"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.set_extent_from_box()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_set_extent_from_polygon"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.set_extent_from_polygon()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_set_extent_height"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.set_extent_height()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_set_extent_width"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.set_extent_width()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_RasterioDataset_set_read_band_order"><code class="docutils literal notranslate"><span class="pre">RasterioDataset.set_read_band_order()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_TiffFileRasterDataset"><code class="docutils literal notranslate"><span class="pre">TiffFileRasterDataset</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_TiffFileRasterDataset_open"><code class="docutils literal notranslate"><span class="pre">TiffFileRasterDataset.open()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_TiffFileRasterDataset_read_chip_data"><code class="docutils literal notranslate"><span class="pre">TiffFileRasterDataset.read_chip_data()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_raster_TiffFileRasterDataset_set_chip_data_info"><code class="docutils literal notranslate"><span class="pre">TiffFileRasterDataset.set_chip_data_info()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aiearth_predict_dataset_vector">vector</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_vector_ShapeFileVectorDataset"><code class="docutils literal notranslate"><span class="pre">ShapeFileVectorDataset</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_vector_ShapeFileVectorDataset_get_features"><code class="docutils literal notranslate"><span class="pre">ShapeFileVectorDataset.get_features()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_vector_ShapeFileVectorDataset_get_geoms"><code class="docutils literal notranslate"><span class="pre">ShapeFileVectorDataset.get_geoms()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_vector_ShapeFileVectorDataset_is_intersects_with_box"><code class="docutils literal notranslate"><span class="pre">ShapeFileVectorDataset.is_intersects_with_box()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_vector_ShapeFileVectorDataset_load_features"><code class="docutils literal notranslate"><span class="pre">ShapeFileVectorDataset.load_features()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aiearth_predict_dataset_vector_VectorDataset"><code class="docutils literal notranslate"><span class="pre">VectorDataset</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=24e20c3b872ad0bc913d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=24e20c3b872ad0bc913d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, aiearth-damo.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    由 <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2创建。
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.4dev0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
