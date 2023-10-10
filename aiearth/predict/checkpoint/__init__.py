@@ -4,9 +4,11 @@ from aiearth.predict.checkpoint.model_config import (
     ModelAttachedFile,
     ModelParams,
     ModelConfig,
+    BuildType,
 )
 
 __all__ = [
+    "BuildType",
     "ModelCheckpoint",
     "AcceleratorType",
     "ModelAttachedFile",

@@ -12,6 +12,6 @@ AI Earth Predict 是时空数据和AI模型相结合的开发套件，用于进�
    overview/index
    getting_started/index
    user_guide/index
-   examples/index
+   scenario_cases/index
    reference/index
    development/index

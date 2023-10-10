@@ -9,6 +9,7 @@ from aiearth.predict.checkpoint.model_config import (
     ModelConfig,
     ModelAttachedFile,
     ModelParams,
+    BuildType,
 )
 from aiearth.predict.error import BizError, ErrorCode, ErrorMessage
 
@@ -49,11 +50,52 @@ class ModelCheckpoint(Checkpoint):
         return cls.from_dict(
             {
                 "path": path,
+                "build_type": BuildType.local_path,
                 "attached_files": attached_files,
                 "params": {
                     "image_size": image_size,
                     "bound": bound,
                     "use_quant": use_quant,
+                    "additional_args": kwargs,
+                },
+            }
+        )
+
+    @classmethod
+    def from_model_scope(
+        cls,
+        path: str,
+        image_size: int = 1024,
+        bound: int = 128,
+        **kwargs,
+    ):
+        return cls.from_dict(
+            {
+                "path": path,
+                "build_type": BuildType.model_scope,
+                "params": {
+                    "image_size": image_size,
+                    "bound": bound,
+                    "additional_args": kwargs,
+                },
+            }
+        )
+
+    @classmethod
+    def from_hugging_face(
+        cls,
+        path: str,
+        image_size: int = 1024,
+        bound: int = 128,
+        **kwargs,
+    ):
+        return cls.from_dict(
+            {
+                "path": path,
+                "build_type": BuildType.hugging_face,
+                "params": {
+                    "image_size": image_size,
+                    "bound": bound,
                     "additional_args": kwargs,
                 },
             }

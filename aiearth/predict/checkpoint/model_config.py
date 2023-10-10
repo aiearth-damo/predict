@@ -23,8 +23,18 @@ class ModelParams(BaseModel):
     additional_args: t.Optional[dict]
 
 
+class BuildType(Enum):
+    local_path = "local_path"
+    model_scope = "model_scope"
+    hugging_face = "hugging_face"
+
+
 class ModelConfig(BaseModel):
     name: t.Optional[str]
     path: str
+    build_type: BuildType
     attached_files: t.Optional[t.Dict[str, ModelAttachedFile]]
     params: ModelParams
+
+    class Config:
+        use_enum_values = True

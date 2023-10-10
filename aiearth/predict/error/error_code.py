@@ -26,6 +26,7 @@ class ErrorCode:
     ARGS_FORMAT_ERROR = 23001023
     GET_ENV_ERROR = 23001024
     HTTP_REQUEST_ERROR = 23001025
+    NOT_SUPPORT_SAVE_MODEL = 23001026
 
 
 class ErrorMessage:
@@ -55,3 +56,4 @@ class ErrorMessage:
     ARGS_FORMAT_ERROR = "参数格式错误"
     GET_ENV_ERROR = "获取环境变量失败"
     HTTP_REQUEST_ERROR = "HTTP请求失败"
+    NOT_SUPPORT_SAVE_MODEL = "不支持模型保存"

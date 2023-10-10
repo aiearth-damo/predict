@@ -213,6 +213,80 @@ class ModelVersionClient:
 
     @staticmethod
     def save_model(model_version_id, model_config):
+        if model_config.build_type == "local_path":
+            ModelVersionClient.save_local_path_model(model_version_id, model_config)
+        else:
+            raise BizError(
+                ErrorCode.NOT_SUPPORT_SAVE_MODEL,
+                f"{ErrorMessage.NOT_SUPPORT_SAVE_MODEL} Checkpoint BuildType: {model_config.build_type}",
+            )
+
+    @staticmethod
+    def save_model_scope_model(model_version_id, model_config):
+        name = model_config.name
+        if name is None:
+            name = os.path.basename(model_config.path)
+            if not os.path.isdir(model_config.path):
+                name = os.path.splitext(name)[0]
+
+        attached_files = {}
+        if model_config.attached_files:
+            for k, v in model_config.attached_files.items():
+                attached_files[k] = v.dict()
+        signed = ModelVersionClient.upload_model(
+            model_version_id,
+            name,
+            model_config.path,
+            attached_files,
+            model_config.params.dict(),
+        )
+
+        model_id = signed.pop("id")
+        model_tag = signed.pop("tag")
+        if "path" not in signed:
+            raise BizError(
+                ErrorCode.MODEL_UPLOAD_ERROR,
+                f"{ErrorMessage.MODEL_UPLOAD_ERROR}: signed response lack path",
+            )
+
+        try:
+            params = signed["path"]
+            raw_path = params.pop("rawPath")
+            if os.path.isdir(raw_path):
+                tempdir = gettempdir() + os.sep
+                with NamedTemporaryFile(
+                    prefix=tempdir, suffix=".zip", delete=True
+                ) as fp:
+                    package_path = fp.name
+                    Package.zip_directory(raw_path, package_path)
+                    ModelVersionClient.upload(package_path, params)
+            else:
+                ModelVersionClient.upload(raw_path, params)
+
+            if "attachedFiles" in signed:
+                for params in signed["attachedFiles"]:
+                    raw_file_path = params.pop("rawPath")
+                    ModelVersionClient.upload(raw_file_path, params)
+
+            ModelVersionClient.upload_model_finished(
+                model_version_id, model_id, UploadModelStatus.FINISHED.value
+            )
+        except Exception as e:
+            import traceback
+
+            message = str(e).replace("\n", " ")
+            logger.error(f"{message}")
+
+            ModelVersionClient.upload_model_finished(
+                model_version_id, model_id, UploadModelStatus.FAILED.value
+            )
+
+            sys.exit(-1)
+
+        return model_tag
+
+    @staticmethod
+    def save_local_path_model(model_version_id, model_config):
         name = model_config.name
         if name is None:
             name = os.path.basename(model_config.path)
