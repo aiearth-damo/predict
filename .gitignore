@@ -1,0 +1,17 @@
+__pycache__
+*.egg-info
+build
+dist
+
+note
+upload.sh
+bak
+.DS_Store
+docs.tar.gz
+
+_build
+
+examples
+tests
+*.sh
+Dockerfile

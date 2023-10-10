@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>aiearth.predict.deploy.client.model_version_client &#8212; Predict 0.0.1</title>
+    <title>aiearth.predict.deploy.client.model_version_client &#8212; Predict 0.0.2</title>
   
   
   
@@ -34,7 +34,7 @@
 <link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=24e20c3b872ad0bc913d" />
   <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=24e20c3b872ad0bc913d"></script>
 
-    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js?v=40591b51"></script>
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js?v=d226c5ba"></script>
     <script src="../../../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../../../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../../../../../_static/translations.js?v=beaddf03"></script>
@@ -161,7 +161,7 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../../examples/index.html">
+                      <a class="nav-link nav-internal" href="../../../../../scenario_cases/index.html">
                         场景案例
                       </a>
                     </li>
@@ -287,7 +287,7 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../../examples/index.html">
+                      <a class="nav-link nav-internal" href="../../../../../scenario_cases/index.html">
                         场景案例
                       </a>
                     </li>
@@ -606,6 +606,80 @@ document.write(`
 
 <div class="viewcode-block" id="ModelVersionClient.save_model"><a class="viewcode-back" href="../../../../../reference/apis/deploy.html#aiearth.predict.deploy.client.ModelVersionClient.save_model">[文档]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">save_model</span><span class="p">(</span><span class="n">model_version_id</span><span class="p">,</span> <span class="n">model_config</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">model_config</span><span class="o">.</span><span class="n">build_type</span> <span class="o">==</span> <span class="s2">&quot;local_path&quot;</span><span class="p">:</span>
+            <span class="n">ModelVersionClient</span><span class="o">.</span><span class="n">save_local_path_model</span><span class="p">(</span><span class="n">model_version_id</span><span class="p">,</span> <span class="n">model_config</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">BizError</span><span class="p">(</span>
+                <span class="n">ErrorCode</span><span class="o">.</span><span class="n">NOT_SUPPORT_SAVE_MODEL</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ErrorMessage</span><span class="o">.</span><span class="n">NOT_SUPPORT_SAVE_MODEL</span><span class="si">}</span><span class="s2"> Checkpoint BuildType: </span><span class="si">{</span><span class="n">model_config</span><span class="o">.</span><span class="n">build_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="p">)</span></div>
+
+<div class="viewcode-block" id="ModelVersionClient.save_model_scope_model"><a class="viewcode-back" href="../../../../../reference/apis/deploy.html#aiearth.predict.deploy.client.ModelVersionClient.save_model_scope_model">[文档]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">save_model_scope_model</span><span class="p">(</span><span class="n">model_version_id</span><span class="p">,</span> <span class="n">model_config</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">model_config</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">model_config</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">model_config</span><span class="o">.</span><span class="n">path</span><span class="p">):</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">name</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">attached_files</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="n">model_config</span><span class="o">.</span><span class="n">attached_files</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">model_config</span><span class="o">.</span><span class="n">attached_files</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">attached_files</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">dict</span><span class="p">()</span>
+        <span class="n">signed</span> <span class="o">=</span> <span class="n">ModelVersionClient</span><span class="o">.</span><span class="n">upload_model</span><span class="p">(</span>
+            <span class="n">model_version_id</span><span class="p">,</span>
+            <span class="n">name</span><span class="p">,</span>
+            <span class="n">model_config</span><span class="o">.</span><span class="n">path</span><span class="p">,</span>
+            <span class="n">attached_files</span><span class="p">,</span>
+            <span class="n">model_config</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span>
+        <span class="p">)</span>
+
+        <span class="n">model_id</span> <span class="o">=</span> <span class="n">signed</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
+        <span class="n">model_tag</span> <span class="o">=</span> <span class="n">signed</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;tag&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;path&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">signed</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">BizError</span><span class="p">(</span>
+                <span class="n">ErrorCode</span><span class="o">.</span><span class="n">MODEL_UPLOAD_ERROR</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ErrorMessage</span><span class="o">.</span><span class="n">MODEL_UPLOAD_ERROR</span><span class="si">}</span><span class="s2">: signed response lack path&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">params</span> <span class="o">=</span> <span class="n">signed</span><span class="p">[</span><span class="s2">&quot;path&quot;</span><span class="p">]</span>
+            <span class="n">raw_path</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;rawPath&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">raw_path</span><span class="p">):</span>
+                <span class="n">tempdir</span> <span class="o">=</span> <span class="n">gettempdir</span><span class="p">()</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span>
+                <span class="k">with</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span>
+                    <span class="n">prefix</span><span class="o">=</span><span class="n">tempdir</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.zip&quot;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">True</span>
+                <span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+                    <span class="n">package_path</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">name</span>
+                    <span class="n">Package</span><span class="o">.</span><span class="n">zip_directory</span><span class="p">(</span><span class="n">raw_path</span><span class="p">,</span> <span class="n">package_path</span><span class="p">)</span>
+                    <span class="n">ModelVersionClient</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="n">package_path</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ModelVersionClient</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="n">raw_path</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="s2">&quot;attachedFiles&quot;</span> <span class="ow">in</span> <span class="n">signed</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">params</span> <span class="ow">in</span> <span class="n">signed</span><span class="p">[</span><span class="s2">&quot;attachedFiles&quot;</span><span class="p">]:</span>
+                    <span class="n">raw_file_path</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;rawPath&quot;</span><span class="p">)</span>
+                    <span class="n">ModelVersionClient</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="n">raw_file_path</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+
+            <span class="n">ModelVersionClient</span><span class="o">.</span><span class="n">upload_model_finished</span><span class="p">(</span>
+                <span class="n">model_version_id</span><span class="p">,</span> <span class="n">model_id</span><span class="p">,</span> <span class="n">UploadModelStatus</span><span class="o">.</span><span class="n">FINISHED</span><span class="o">.</span><span class="n">value</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">traceback</span>
+
+            <span class="n">message</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="n">ModelVersionClient</span><span class="o">.</span><span class="n">upload_model_finished</span><span class="p">(</span>
+                <span class="n">model_version_id</span><span class="p">,</span> <span class="n">model_id</span><span class="p">,</span> <span class="n">UploadModelStatus</span><span class="o">.</span><span class="n">FAILED</span><span class="o">.</span><span class="n">value</span>
+            <span class="p">)</span>
+
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">model_tag</span></div>
+
+<div class="viewcode-block" id="ModelVersionClient.save_local_path_model"><a class="viewcode-back" href="../../../../../reference/apis/deploy.html#aiearth.predict.deploy.client.ModelVersionClient.save_local_path_model">[文档]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">save_local_path_model</span><span class="p">(</span><span class="n">model_version_id</span><span class="p">,</span> <span class="n">model_config</span><span class="p">):</span>
         <span class="n">name</span> <span class="o">=</span> <span class="n">model_config</span><span class="o">.</span><span class="n">name</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">model_config</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>

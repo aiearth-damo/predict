@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>onnx模型转trt &#8212; Predict 0.0.1</title>
+    <title>工具箱部署 &#8212; Predict 0.0.2</title>
   
   
   
@@ -29,26 +29,26 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=362ab14a" />
-    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=24e20c3b872ad0bc913d" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=24e20c3b872ad0bc913d" />
   <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=24e20c3b872ad0bc913d"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=40591b51"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=d226c5ba"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../../_static/translations.js?v=beaddf03"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/notebooks/onnx2trt';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scenario_cases/notebooks/deploy_to_toolbox';</script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="本地模型推理" href="local_predict.html" />
-    <link rel="prev" title="场景案例" href="../index.html" />
+    <link rel="next" title="遥感数据处理" href="process_geo_dataset.html" />
+    <link rel="prev" title="模型保存" href="save_model.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="zh-CN"/>
   </head>
@@ -353,10 +353,10 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">onnx模型转trt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="onnx2trt.html">onnx模型转trt</a></li>
 <li class="toctree-l1"><a class="reference internal" href="local_predict.html">本地模型推理</a></li>
 <li class="toctree-l1"><a class="reference internal" href="save_model.html">模型保存</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deploy_to_toolbox.html">工具箱部署</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">工具箱部署</a></li>
 <li class="toctree-l1"><a class="reference internal" href="process_geo_dataset.html">遥感数据处理</a></li>
 </ul>
 </div>
@@ -398,7 +398,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">场景案例</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">onnx模型转trt</li>
+    <li class="breadcrumb-item active" aria-current="page">工具箱部署</li>
   </ul>
 </nav>
 </div>
@@ -415,35 +415,129 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="onnx模型转trt">
-<h1>onnx模型转trt<a class="headerlink" href="#onnx模型转trt" title="此标题的永久链接">#</a></h1>
-<section id="初始化TensorrtInfer">
-<h2>初始化TensorrtInfer<a class="headerlink" href="#初始化TensorrtInfer" title="此标题的永久链接">#</a></h2>
+  <section id="工具箱部署">
+<h1>工具箱部署<a class="headerlink" href="#工具箱部署" title="此标题的永久链接">#</a></h1>
+<p>模型pipeline可部署到云平台工具箱模式下个人的AI解译工具，并通过云平台的工具箱模式从页面提交AI解译任务</p>
+<section id="本地模型推理">
+<h2>本地模型推理<a class="headerlink" href="#本地模型推理" title="此标题的永久链接">#</a></h2>
+<p>模型部署到云平台之前建议先在本地进行模型pipeline链路的调试，本地运行成功之后再部署为云平台工具箱下个人的AI解译工具</p>
+<p>本地模型推理流程请参考：<a class="reference internal" href="local_predict.html"><span class="doc">本地模型推理</span></a></p>
+</section>
+<section id="模型保存">
+<h2>模型保存<a class="headerlink" href="#模型保存" title="此标题的永久链接">#</a></h2>
+<p>模型pipeline部署到云平台之前需要先将模型文件保存到云平台，并将模型pipeline代码的checkpoint初始化修改为<code class="docutils literal notranslate"><span class="pre">from_remote_tag</span></code>的方式进行模型引用</p>
+<p>模型保存流程请参考：<a class="reference internal" href="save_model.html"><span class="doc">模型保存</span></a></p>
+</section>
+<section id="模型pipeline">
+<h2>模型pipeline<a class="headerlink" href="#模型pipeline" title="此标题的永久链接">#</a></h2>
+<p>将本地模型pipeline进行少许改动，进行云平台工具箱模式的参数适配，主要改动为：</p>
+<ul class="simple">
+<li><p>checkpoint初始化方式：本地运行时的初始化方式为<code class="docutils literal notranslate"><span class="pre">from_local_path</span></code>，部署到云平台时需要将初始化方式修改为<code class="docutils literal notranslate"><span class="pre">from_remote_tag</span></code>，通过保存到云平台的模型tag进行引用</p></li>
+<li><p>pipeline运行时的输入参数：本地运行时pipeline的输入参数可直接通过接口指定，部署到云平台时pipeline的输入参数需要通过<code class="docutils literal notranslate"><span class="pre">parse_input_args</span></code>进行解析得到运行时参数</p></li>
+</ul>
+<p>修改之后的模型pipeline代码为：</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiearth.predict.predictors.infer_sdk.tensorrt_infer</span> <span class="kn">import</span> <span class="n">TensorRTInfer</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiearth.predict.checkpoint</span> <span class="kn">import</span> <span class="n">ModelCheckpoint</span>
+<span class="kn">from</span> <span class="nn">aiearth.predict.predictors</span> <span class="kn">import</span> <span class="n">TensorrtPredictor</span>
+<span class="kn">from</span> <span class="nn">aiearth.predict.processors</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Chw2HwcProcessor</span><span class="p">,</span>
+    <span class="n">MeanNormProcessor</span><span class="p">,</span>
+    <span class="n">Hwc2ChwProcessor</span><span class="p">,</span>
+    <span class="n">SqueezeNdimProcessor</span><span class="p">,</span>
+    <span class="n">MaskBinarizationProcessor</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">aiearth.predict.pipelines</span> <span class="kn">import</span> <span class="n">GeoSegmentationPredictPipeline</span>
+<span class="kn">from</span> <span class="nn">aiearth.predict.adapter.toolbox</span> <span class="kn">import</span> <span class="n">parse_input_args</span><span class="p">,</span> <span class="n">InputArgs</span>
 
-<span class="n">trt</span> <span class="o">=</span> <span class="n">TensorRTInfer</span><span class="p">(</span>
-    <span class="n">model_path</span><span class="o">=</span><span class="s2">&quot;/path/to/your/onnx&quot;</span><span class="p">,</span> <span class="n">use_static</span><span class="o">=</span><span class="kc">False</span>
+<span class="kn">from</span> <span class="nn">aiearth.predict.logging</span> <span class="kn">import</span> <span class="n">root_logger</span> <span class="k">as</span> <span class="n">logger</span>
+
+<span class="n">ckpt</span> <span class="o">=</span> <span class="n">ModelCheckpoint</span><span class="o">.</span><span class="n">from_remote_tag</span><span class="p">(</span><span class="n">saved_model_tag</span><span class="p">)</span>
+
+<span class="n">pipe</span> <span class="o">=</span> <span class="n">GeoSegmentationPredictPipeline</span><span class="p">(</span>
+    <span class="n">model_checkpoint</span><span class="o">=</span><span class="n">ckpt</span><span class="p">,</span>
+    <span class="n">predictor_cls</span><span class="o">=</span><span class="n">TensorrtPredictor</span><span class="p">,</span>
+    <span class="n">pre_processors</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">Chw2HwcProcessor</span><span class="p">([</span><span class="s2">&quot;image&quot;</span><span class="p">]),</span>
+        <span class="n">MeanNormProcessor</span><span class="p">(</span>
+            <span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">],</span> <span class="p">[</span><span class="mf">123.675</span><span class="p">,</span> <span class="mf">116.28</span><span class="p">,</span> <span class="mf">103.53</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.01712475</span><span class="p">,</span> <span class="mf">0.017507</span><span class="p">,</span> <span class="mf">0.01742919</span><span class="p">]</span>
+        <span class="p">),</span>
+        <span class="n">Hwc2ChwProcessor</span><span class="p">([</span><span class="s2">&quot;image&quot;</span><span class="p">]),</span>
+    <span class="p">],</span>
+    <span class="n">post_processors</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">SqueezeNdimProcessor</span><span class="p">([</span><span class="s2">&quot;image&quot;</span><span class="p">]),</span>
+        <span class="n">MaskBinarizationProcessor</span><span class="p">([</span><span class="s2">&quot;image&quot;</span><span class="p">],</span> <span class="mf">127.5</span><span class="p">),</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;run pipeline&quot;</span><span class="p">)</span>
+
+<span class="n">input_args</span><span class="p">:</span> <span class="n">InputArgs</span> <span class="o">=</span> <span class="n">parse_input_args</span><span class="p">()</span>
+<span class="n">pipe</span><span class="p">(</span>
+    <span class="n">uri</span><span class="o">=</span><span class="n">input_args</span><span class="o">.</span><span class="n">src</span><span class="p">,</span>
+    <span class="n">out_dir</span><span class="o">=</span><span class="n">input_args</span><span class="o">.</span><span class="n">result_dir</span><span class="p">,</span>
+    <span class="n">temp_dir</span><span class="o">=</span><span class="n">input_args</span><span class="o">.</span><span class="n">temp_dir</span><span class="p">,</span>
+    <span class="n">out_filename</span><span class="o">=</span><span class="n">input_args</span><span class="o">.</span><span class="n">out_filename</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>运行的时候需要将 <code class="docutils literal notranslate"><span class="pre">/path/to/your/onnx</span></code> 路径替换为本地onnx模型的绝对路径，<code class="docutils literal notranslate"><span class="pre">use_static=False</span></code>表示模型没有对应的trt文件，需要先将onnx文件转换为trt engine，转换之后的trt engine是和显卡架构相关的，比如在TeslaV100上转换的模型推理时在TeslaT4的显卡上是不能运行的</p>
+<p><code class="docutils literal notranslate"><span class="pre">saved_model_tag</span></code>为<a class="reference internal" href="save_model.html"><span class="doc">模型保存</span></a>中返回的模型tag引用，创建<code class="docutils literal notranslate"><span class="pre">code_snippets</span></code>目录，将模型pipeline代码保存到<code class="docutils literal notranslate"><span class="pre">code_snippets</span></code>目录下面，并命名为<code class="docutils literal notranslate"><span class="pre">pipe.py</span></code></p>
 </section>
-<section id="获取trt-engine路径">
-<h2>获取trt engine路径<a class="headerlink" href="#获取trt-engine路径" title="此标题的永久链接">#</a></h2>
-<p>获取转换好的trt engine文件路径</p>
+<section id="id4">
+<h2>工具箱部署<a class="headerlink" href="#id4" title="此标题的永久链接">#</a></h2>
+<p>通过模型版本客户端将模型pipeline代码部署到云平台工具箱模式</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">trt</span><span class="o">.</span><span class="n">get_engine_path</span><span class="p">())</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiearth.predict.deploy.schema</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">JobConfig</span><span class="p">,</span>
+    <span class="n">JobOutType</span><span class="p">,</span>
+    <span class="n">ToolboxRunConfig</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">job_config</span> <span class="o">=</span> <span class="n">JobConfig</span><span class="p">(</span>
+    <span class="n">entrypoint</span><span class="o">=</span><span class="s2">&quot;python pipe.py&quot;</span><span class="p">,</span>
+    <span class="n">runtime_env</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;working_dir&quot;</span><span class="p">:</span> <span class="s2">&quot;./code_snippets&quot;</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="n">run_config</span> <span class="o">=</span> <span class="n">ToolboxRunConfig</span><span class="p">(</span><span class="n">out_type</span><span class="o">=</span><span class="n">JobOutType</span><span class="o">.</span><span class="n">VECTOR</span><span class="p">)</span>
+
+<span class="n">deploy</span> <span class="o">=</span> <span class="n">version</span><span class="o">.</span><span class="n">deploy_as_toolbox</span><span class="p">(</span><span class="n">job_config</span><span class="p">,</span> <span class="n">run_config</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">job_config</span></code>为模型pipeline的部署配置，<code class="docutils literal notranslate"><span class="pre">entrypoint</span></code>参数是任务的运行入口，这里为保存的模型pipeline代码文件，<code class="docutils literal notranslate"><span class="pre">runtime_env.working_dir</span></code>为模型pipeline代码的上层文件夹路径，部署时需要将代码文件夹进行打包上传</p>
+<p><code class="docutils literal notranslate"><span class="pre">run_config</span></code>为pipeline运行时需要的配置，<code class="docutils literal notranslate"><span class="pre">JobOutType.VECTOR</span></code>表示模型pipeline运行输出的结果文件类型为shape文件</p>
+<p><code class="docutils literal notranslate"><span class="pre">version</span></code>是<code class="docutils literal notranslate"><span class="pre">模型保存</span></code>时创建的模型版本对象</p>
+</section>
+<section id="查询部署状态">
+<h2>查询部署状态<a class="headerlink" href="#查询部署状态" title="此标题的永久链接">#</a></h2>
+<p>查询模型部署的状态，部署状态类型有：</p>
+<ul class="simple">
+<li><p>waiting：等待部署</p></li>
+<li><p>deploying：部署中</p></li>
+<li><p>finished： 部署完成</p></li>
+<li><p>failed：部署失败</p></li>
+<li><p>undeploying：等待取消部署</p></li>
+<li><p>undeployed：部署已取消</p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">deploy_status</span> <span class="o">=</span> <span class="n">deploy</span><span class="o">.</span><span class="n">get_deploy_status</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">deploy_status</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="提交解译任务">
+<h2>提交解译任务<a class="headerlink" href="#提交解译任务" title="此标题的永久链接">#</a></h2>
+<p>当模型pipeline部署完成之后，可通过云平台的工具箱模式从页面提交AI解译任务</p>
+<p><img alt="toolbox" src="../../_images/toolbox.jpeg" /></p>
 </section>
 </section>
 
@@ -458,20 +552,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../index.html"
+       href="save_model.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">上一页</p>
-        <p class="prev-next-title">场景案例</p>
+        <p class="prev-next-title">模型保存</p>
       </div>
     </a>
     <a class="right-next"
-       href="local_predict.html"
+       href="process_geo_dataset.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">下一页</p>
-        <p class="prev-next-title">本地模型推理</p>
+        <p class="prev-next-title">遥感数据处理</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -490,8 +584,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#初始化TensorrtInfer">初始化TensorrtInfer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#获取trt-engine路径">获取trt engine路径</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#本地模型推理">本地模型推理</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#模型保存">模型保存</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#模型pipeline">模型pipeline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">工具箱部署</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#查询部署状态">查询部署状态</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#提交解译任务">提交解译任务</a></li>
 </ul>
   </nav></div>
 

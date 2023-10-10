@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>aiearth.predict.checkpoint.model_config &#8212; Predict 0.0.1</title>
+    <title>aiearth.predict.checkpoint.model_config &#8212; Predict 0.0.2</title>
   
   
   
@@ -34,7 +34,7 @@
 <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=24e20c3b872ad0bc913d" />
   <script src="../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=24e20c3b872ad0bc913d"></script>
 
-    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=40591b51"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=d226c5ba"></script>
     <script src="../../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../../../../_static/translations.js?v=beaddf03"></script>
@@ -161,7 +161,7 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../examples/index.html">
+                      <a class="nav-link nav-internal" href="../../../../scenario_cases/index.html">
                         场景案例
                       </a>
                     </li>
@@ -287,7 +287,7 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../examples/index.html">
+                      <a class="nav-link nav-internal" href="../../../../scenario_cases/index.html">
                         场景案例
                       </a>
                     </li>
@@ -416,11 +416,21 @@ document.write(`
     <span class="n">additional_args</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span></div>
 
 
+<div class="viewcode-block" id="BuildType"><a class="viewcode-back" href="../../../../reference/apis/checkpoint.html#aiearth.predict.checkpoint.BuildType">[文档]</a><span class="k">class</span> <span class="nc">BuildType</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">local_path</span> <span class="o">=</span> <span class="s2">&quot;local_path&quot;</span>
+    <span class="n">model_scope</span> <span class="o">=</span> <span class="s2">&quot;model_scope&quot;</span>
+    <span class="n">hugging_face</span> <span class="o">=</span> <span class="s2">&quot;hugging_face&quot;</span></div>
+
+
 <div class="viewcode-block" id="ModelConfig"><a class="viewcode-back" href="../../../../reference/apis/checkpoint.html#aiearth.predict.checkpoint.ModelConfig">[文档]</a><span class="k">class</span> <span class="nc">ModelConfig</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
     <span class="n">name</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
     <span class="n">path</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">build_type</span><span class="p">:</span> <span class="n">BuildType</span>
     <span class="n">attached_files</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ModelAttachedFile</span><span class="p">]]</span>
-    <span class="n">params</span><span class="p">:</span> <span class="n">ModelParams</span></div>
+    <span class="n">params</span><span class="p">:</span> <span class="n">ModelParams</span>
+
+<div class="viewcode-block" id="ModelConfig.Config"><a class="viewcode-back" href="../../../../reference/apis/checkpoint.html#aiearth.predict.checkpoint.ModelConfig.Config">[文档]</a>    <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+        <span class="n">use_enum_values</span> <span class="o">=</span> <span class="kc">True</span></div></div>
 </pre></div>
 
                 </article>

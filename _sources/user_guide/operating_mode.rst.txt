@@ -32,4 +32,4 @@ AI Earth Predict 支持两种运行模式：本地运行、 `云平台AI解译�
 
 .. image:: /images/toolbox.jpeg
 
-模型部署请参考: `工具箱部署 <../examples/notebooks/deploy_to_toolbox.ipynb>`_ 
+模型部署请参考: `工具箱部署 <../scenario_cases/notebooks/deploy_to_toolbox.ipynb>`_ 

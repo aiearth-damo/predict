@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>aiearth.predict.checkpoint.model_checkpoint &#8212; Predict 0.0.1</title>
+    <title>aiearth.predict.checkpoint.model_checkpoint &#8212; Predict 0.0.2</title>
   
   
   
@@ -34,7 +34,7 @@
 <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=24e20c3b872ad0bc913d" />
   <script src="../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=24e20c3b872ad0bc913d"></script>
 
-    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=40591b51"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=d226c5ba"></script>
     <script src="../../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../../../../_static/translations.js?v=beaddf03"></script>
@@ -161,7 +161,7 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../examples/index.html">
+                      <a class="nav-link nav-internal" href="../../../../scenario_cases/index.html">
                         场景案例
                       </a>
                     </li>
@@ -287,7 +287,7 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../examples/index.html">
+                      <a class="nav-link nav-internal" href="../../../../scenario_cases/index.html">
                         场景案例
                       </a>
                     </li>
@@ -402,6 +402,7 @@ document.write(`
     <span class="n">ModelConfig</span><span class="p">,</span>
     <span class="n">ModelAttachedFile</span><span class="p">,</span>
     <span class="n">ModelParams</span><span class="p">,</span>
+    <span class="n">BuildType</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">aiearth.predict.error</span> <span class="kn">import</span> <span class="n">BizError</span><span class="p">,</span> <span class="n">ErrorCode</span><span class="p">,</span> <span class="n">ErrorMessage</span>
 
@@ -442,11 +443,52 @@ document.write(`
         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span>
             <span class="p">{</span>
                 <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">path</span><span class="p">,</span>
+                <span class="s2">&quot;build_type&quot;</span><span class="p">:</span> <span class="n">BuildType</span><span class="o">.</span><span class="n">local_path</span><span class="p">,</span>
                 <span class="s2">&quot;attached_files&quot;</span><span class="p">:</span> <span class="n">attached_files</span><span class="p">,</span>
                 <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
                     <span class="s2">&quot;image_size&quot;</span><span class="p">:</span> <span class="n">image_size</span><span class="p">,</span>
                     <span class="s2">&quot;bound&quot;</span><span class="p">:</span> <span class="n">bound</span><span class="p">,</span>
                     <span class="s2">&quot;use_quant&quot;</span><span class="p">:</span> <span class="n">use_quant</span><span class="p">,</span>
+                    <span class="s2">&quot;additional_args&quot;</span><span class="p">:</span> <span class="n">kwargs</span><span class="p">,</span>
+                <span class="p">},</span>
+            <span class="p">}</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="ModelCheckpoint.from_model_scope"><a class="viewcode-back" href="../../../../reference/apis/checkpoint.html#aiearth.predict.checkpoint.ModelCheckpoint.from_model_scope">[文档]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_model_scope</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">image_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1024</span><span class="p">,</span>
+        <span class="n">bound</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">path</span><span class="p">,</span>
+                <span class="s2">&quot;build_type&quot;</span><span class="p">:</span> <span class="n">BuildType</span><span class="o">.</span><span class="n">model_scope</span><span class="p">,</span>
+                <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;image_size&quot;</span><span class="p">:</span> <span class="n">image_size</span><span class="p">,</span>
+                    <span class="s2">&quot;bound&quot;</span><span class="p">:</span> <span class="n">bound</span><span class="p">,</span>
+                    <span class="s2">&quot;additional_args&quot;</span><span class="p">:</span> <span class="n">kwargs</span><span class="p">,</span>
+                <span class="p">},</span>
+            <span class="p">}</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="ModelCheckpoint.from_hugging_face"><a class="viewcode-back" href="../../../../reference/apis/checkpoint.html#aiearth.predict.checkpoint.ModelCheckpoint.from_hugging_face">[文档]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_hugging_face</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">image_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1024</span><span class="p">,</span>
+        <span class="n">bound</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">path</span><span class="p">,</span>
+                <span class="s2">&quot;build_type&quot;</span><span class="p">:</span> <span class="n">BuildType</span><span class="o">.</span><span class="n">hugging_face</span><span class="p">,</span>
+                <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;image_size&quot;</span><span class="p">:</span> <span class="n">image_size</span><span class="p">,</span>
+                    <span class="s2">&quot;bound&quot;</span><span class="p">:</span> <span class="n">bound</span><span class="p">,</span>
                     <span class="s2">&quot;additional_args&quot;</span><span class="p">:</span> <span class="n">kwargs</span><span class="p">,</span>
                 <span class="p">},</span>
             <span class="p">}</span>
